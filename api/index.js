@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.use('/uploads',express.static(__dirname+'/uploads'))
 
-const connectionurl = "mongodb+srv://atharvajoshi814:dADxm0UlX4MHEeXy@blog.r9njcsr.mongodb.net/?retryWrites=true&w=majority&appName=blog";
+const connectionurl = process.env.MONGODB_URL;
 
 mongoose.connect(connectionurl)
   .then(() => {

@@ -15,8 +15,7 @@ export default function LoginPage() {
     try {
       const response = await fetch('http://localhost:4000/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
+        headers: {         'Content-Type': 'application/json'
         },
         credentials: "include",
         body: JSON.stringify(user)
@@ -33,6 +32,7 @@ export default function LoginPage() {
       }
     } catch (error) {
       console.error('Error during login:', error);
+
     }
   };
 

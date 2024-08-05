@@ -13,7 +13,7 @@ export default function LoginPage() {
     const user = { username, password };
 
     try {
-      const response = await fetch('https://full-stack-blog-application-api.vercel.app', {
+      const response = await fetch('https://full-stack-blog-application-api.vercel.app/login', {
         method: 'POST',
         headers: {         'Content-Type': 'application/json'
         },

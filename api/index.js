@@ -17,7 +17,8 @@ const secret = 'my_jsonwebtoken_secured_key'; // Replace with a secure secret ke
 
 app.use(cors({
   credentials: true,
-  origin: "http://localhost:5173"
+  origin: "http://localhost:5173",
+  
 }));
 
 app.use(cookieParser());

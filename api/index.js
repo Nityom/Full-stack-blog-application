@@ -17,7 +17,7 @@ const secret = 'my_jsonwebtoken_secured_key'; // Replace with a secure secret ke
 
 app.use(cors({
   credentials: true,
-  origin: "https://full-stack-blog-application-gold.vercel.app/index",
+  origin: "https://full-stack-blog-application-gold.vercel.app",
   
 }));
 

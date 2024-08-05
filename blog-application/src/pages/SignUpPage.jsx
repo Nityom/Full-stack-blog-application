@@ -9,7 +9,7 @@ export default function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('https://full-stack-blog-application-api.vercel.app/signup', {
+    const response = await fetch('https://full-stack-blog-application-api.vercel.app', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' }

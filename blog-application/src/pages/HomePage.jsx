@@ -10,7 +10,7 @@ function HomePage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('https://full-stack-blog-application-api.vercel.app/allposts');
+        const response = await fetch('https://full-stack-blog-application-api.vercel.app');
         const data = await response.json();
         setPosts(data);
       } catch (error) {

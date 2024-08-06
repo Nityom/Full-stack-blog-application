@@ -31,7 +31,7 @@ export default function Header() {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:4000/logout', {
+      await fetch('https://full-stack-blog-application-so7c.onrender.com/logout', {
         method: 'POST',
         credentials: 'include', // Include cookies in the request
       });

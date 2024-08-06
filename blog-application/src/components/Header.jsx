@@ -21,14 +21,15 @@ export default function Header() {
           // Handle different response statuses
           if (response.status === 401) {
             console.error('Unauthorized: Please log in.');
+            navigate('/login'); // Redirect to login page
           } else {
             console.error(`Error: ${response.statusText}`);
+            navigate('/index'); // Redirect to index or error page
           }
-          navigate('/index');
         }
       } catch (error) {
         console.error('Error fetching profile:', error);
-        navigate('/index');
+        navigate('/index'); // Redirect to index or error page
       }
     };
 
@@ -44,7 +45,7 @@ export default function Header() {
 
       if (response.ok) {
         setUserInfo(null);
-        navigate('/index');
+        navigate('/index'); // Redirect to index or home page
       } else {
         console.error(`Logout failed: ${response.statusText}`);
       }

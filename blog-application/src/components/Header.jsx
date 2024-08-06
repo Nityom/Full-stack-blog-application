@@ -9,7 +9,7 @@ export default function Header() {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch('http://localhost:4000/profile', {
+        const response = await fetch('https://full-stack-blog-application-so7c.onrender.com/profile', {
           method: 'GET',
           credentials: 'include', // Include cookies in the request
         });

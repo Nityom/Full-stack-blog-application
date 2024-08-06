@@ -10,7 +10,7 @@ function HomePage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('http://localhost:4000/allposts');
+        const response = await fetch('https://full-stack-blog-application-so7c.onrender.com/allposts');
         const data = await response.json();
         setPosts(data);
       } catch (error) {

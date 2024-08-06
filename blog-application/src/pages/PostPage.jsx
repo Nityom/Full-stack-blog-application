@@ -8,7 +8,7 @@ function PostPage() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`https://full-stack-blog-application-so7c.onrender.com/${id}`)
       .then((response) => response.json())
       .then((postInfo) => {
         setPostInfo(postInfo);
@@ -20,7 +20,7 @@ function PostPage() {
   return (
     <article className="prose prose-gray max-w-6xl mx-auto dark:prose-invert px-4 sm:px-6 lg:px-8">
       <img
-        src={`http://localhost:4000/${postInfo.cover}`}
+        src={`https://full-stack-blog-application-so7c.onrender.com/${postInfo.cover}`}
         alt={postInfo.title}
         className="w-full max-w-full h-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] overflow-hidden rounded-lg object-cover"
       />

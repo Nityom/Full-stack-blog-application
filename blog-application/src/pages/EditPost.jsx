@@ -32,7 +32,7 @@ function EditPost() {
     if (file) formData.append('file', file[0]); // File is an array; use the first file
 
     try {
-      const response = await fetch(`http://localhost:4000/post/${id}`, {
+      const response = await fetch(`https://full-stack-blog-application-so7c.onrender.com/post/${id}`, {
         method: 'PUT', // Use PUT for updating; change to POST if creating a new post
         body: formData,
       });

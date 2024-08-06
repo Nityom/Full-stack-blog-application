@@ -57,7 +57,7 @@ app.post('/login', async (req, res) => {
 
     const token = jwt.sign({ id: userDoc._id, username: userDoc.username }, secret, { expiresIn: '1h' });
     res.cookie('token', token, {maxAge: 3600000 }) // 1 hour
-      .status(200).json({ message: 'Login successful', id: userDoc._id, username: userDoc.username, token });
+      .status(200).json({ message: 'Login successful', id: userDoc._id, username: userDoc.username, token , cookie });
   } catch (err) {
     res.status(500).json({ message: 'Error logging in', error: err.message });
   }

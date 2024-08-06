@@ -18,7 +18,7 @@ const secret = process.env.JWT_SECRET || 'my_jsonwebtoken_secured_key'; // Use e
 
 app.use(cors({
   credentials: true,
-  origin: "*", // Adjust according to your client origin
+  origin: "https://full-stack-blog28.netlify.app", // Adjust according to your client origin
 }));
 app.use(cookieParser());
 app.use(express.json());

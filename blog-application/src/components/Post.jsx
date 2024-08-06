@@ -6,7 +6,7 @@ const BlogPost = ({ _id,cover, heading, author, date, description }) => {
     <article className="w-full max-w-2xl mx-auto my-8 flex flex-col md:flex-row gap-6 border rounded-lg p-5">
       <div className="relative overflow-hidden rounded-lg flex-shrink-0 w-full md:w-1/2">
         <img
-          src={'http://localhost:4000/'+cover}
+          src={'https://full-stack-blog-application-so7c.onrender.com/'+cover}
           alt="Blog Post Image"
           width={1200}
           height={400}

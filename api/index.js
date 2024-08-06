@@ -46,7 +46,6 @@ app.post('/signup', async (req, res) => {
   }
 });
 
-// Login Route
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -56,12 +55,23 @@ app.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign({ id: userDoc._id, username: userDoc.username }, secret, { expiresIn: '1h' });
-    res.cookie('token', token, {maxAge: 3600000 }) // 1 hour
-      .status(200).json({ message: 'Login successful', id: userDoc._id, username: userDoc.username, token , cookie });
+
+    // Setting the cookie options
+    const cookieOptions = {
+      maxAge: 3600000, // 1 hour
+      httpOnly: true, // Helps prevent XSS attacks
+      secure: process.env.NODE_ENV === 'production', // Send only over HTTPS in production
+      sameSite: 'Strict', // Helps prevent CSRF attacks
+      // domain: 'yourdomain.com' // Uncomment and set this if needed
+    };
+
+    res.cookie('token', token, cookieOptions)
+      .status(200).json({ message: 'Login successful', id: userDoc._id, username: userDoc.username, token });
   } catch (err) {
     res.status(500).json({ message: 'Error logging in', error: err.message });
   }
 });
+
 
 // Profile Route
 app.get('/profile', (req, res) => {

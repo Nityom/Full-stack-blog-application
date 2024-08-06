@@ -13,7 +13,7 @@ function EditPost() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`https://full-stack-blog-application-so7c.onrender.com/post/${id}`)
       .then(response => response.json())
       .then(postInfo => {
         setTitle(postInfo.title);

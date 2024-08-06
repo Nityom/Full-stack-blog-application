@@ -13,11 +13,17 @@ export default function Header() {
           method: 'GET',
           credentials: 'include', // Include cookies in the request
         });
-        
+
         if (response.ok) {
           const data = await response.json();
           setUserInfo(data);
         } else {
+          // Handle different response statuses
+          if (response.status === 401) {
+            console.error('Unauthorized: Please log in.');
+          } else {
+            console.error(`Error: ${response.statusText}`);
+          }
           navigate('/index');
         }
       } catch (error) {
@@ -31,12 +37,17 @@ export default function Header() {
 
   const handleLogout = async () => {
     try {
-      await fetch('https://full-stack-blog-application-so7c.onrender.com/logout', {
+      const response = await fetch('https://full-stack-blog-application-so7c.onrender.com/logout', {
         method: 'POST',
         credentials: 'include', // Include cookies in the request
       });
-      setUserInfo(null);
-      navigate('/index');
+
+      if (response.ok) {
+        setUserInfo(null);
+        navigate('/index');
+      } else {
+        console.error(`Logout failed: ${response.statusText}`);
+      }
     } catch (error) {
       console.error('Error logging out:', error);
     }

@@ -10,7 +10,6 @@ import CreatePost from "./pages/CreatePost.jsx";
 import Header from "./components/Header.jsx";
 import PostPage from "./pages/PostPage.jsx";
 import EditPost from "./pages/EditPost.jsx";
-import { WobbleCardDemo } from "./components/WobbleCardDemo.jsx";
 import Example from "./components/Blog.jsx";
 import Footer from "./components/Footer.jsx";
 import NewSignUpPage from "./pages/NewSignUpPage.jsx";
@@ -19,17 +18,17 @@ function App() {
   return (
     <UserContextProvider>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/newsignup" element={<NewSignUpPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/index" element={
+        {/* Default route to IndexPage */}
+        <Route path="/" element={
           <>
             <IndexPage />
             <Example />
             <Footer />
           </>
         } />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/newsignup" element={<NewSignUpPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/create" element={
           <>
             <Header />
